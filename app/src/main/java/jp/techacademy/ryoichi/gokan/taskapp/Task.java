@@ -19,7 +19,7 @@ public class Task extends RealmObject implements Serializable {
     @PrimaryKey
     private int id;
 
-    public String getTitle() ){
+    public String getTitle(){
         return title;
     }
 
