@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidTaskApp.iml" filepath="$PROJECT_DIR$/AndroidTaskApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/TaskApp.iml" filepath="$PROJECT_DIR$/TaskApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

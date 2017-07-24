@@ -1,6 +1,8 @@
 package jp.techacademy.ryoichi.gokan.taskapp;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -158,5 +160,18 @@ public class InputActivity extends AppCompatActivity {
         realm.commitTransaction();
 
         realm.close();
+
+        Intent resultIntent = new Intent(getApplicationContext(), TaskAlarmReceiver.class);
+        resultIntent.putExtra(MainActivity.EXTRA_TASK, mTask.getId());
+        PendingIntent resultPendingIntent = PendingIntent.getBroadcast(
+                this,
+                mTask.getId(), // タスクを削除した歳に、通知も削除する必要があるため、タスクのidを設定しておく
+                resultIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT // 既存のPendingIntentがあれば、タスクのデータだけ置き換える
+        );
+
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), resultPendingIntent);
+
     }
 }
