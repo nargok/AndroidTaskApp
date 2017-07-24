@@ -6,9 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +16,7 @@ import java.util.Locale;
  */
 
 public class TaskAdapter extends BaseAdapter {
-    private LayoutInflater mLayoutInflater;
+    private LayoutInflater mLayoutInflater = null;
     private List<Task> mTaskList;
 
     public TaskAdapter(Context context) {
